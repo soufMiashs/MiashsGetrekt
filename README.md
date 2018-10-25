@@ -1,2 +1,3 @@
 # MiashsGetrekt 
 en cours, et ça va prendre du temps ...
+Le fichier JS est un fichier exemple de la requête fetch 
