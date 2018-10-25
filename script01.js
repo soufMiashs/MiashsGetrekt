@@ -9,7 +9,7 @@ function append(parent,el)
 
 const ul= document.getElementById("authors");
 
-const url='https://randomuser.me/api/?results=10';
+
 
 fetch("https://acobot-brainshop-ai-v1.p.mashape.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=what%20do%20you%20like", {
   headers: {
