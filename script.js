@@ -7,9 +7,9 @@ function append(parent,el)
 	return parent.appendChild(el);
 }
 
-const ul= document.getElementById("authors");
+const ul= document.getElementById("result");
 
-const url='https://randomuser.me/api/?results=10';
+
 
 fetch("https://dnaber-languagetool.p.mashape.com/v2/check", {
   body: "language=en-US&text=becose",
@@ -22,10 +22,10 @@ fetch("https://dnaber-languagetool.p.mashape.com/v2/check", {
 })
 .then((resp)=>resp.json())
 .then(function(data){
-	let authors = data;
+	let result = data;
 	let li= createNode('li'), 
 	span = createNode('h2');
-	span.innerHTML = authors.matches[0].message;
+	span.innerHTML = result.matches[0].message;
 	append(li,span);
 	append(ul,li);
 	
