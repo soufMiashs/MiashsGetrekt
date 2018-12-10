@@ -7,7 +7,7 @@ function append(parent,el)
 	return parent.appendChild(el);
 }
 
-const ul= document.getElementById("authors");
+const ul= document.getElementById("reponse");
 
 fetch("https://acobot-brainshop-ai-v1.p.mashape.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=what%20do%20you%20like", {
   headers: {
@@ -17,11 +17,11 @@ fetch("https://acobot-brainshop-ai-v1.p.mashape.com/get?bid=178&key=sX5A2PcYZbsN
 })
 .then((resp)=>resp.json())
 .then(function(data){
-	let authors = data;
+	let reponse = data;
 	
 	let li= createNode('li'), 
 	span = createNode('h2');
-	span.innerHTML = authors.cnt;
+	span.innerHTML = reponse.cnt;
 	append(li,span);
 	append(ul,li);
 		
