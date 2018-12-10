@@ -1,6 +1,6 @@
 function createNode(element)
 {
-return document.createElement(element);
+	return document.createElement(element);
 }
 function append(parent,el)
 {
@@ -9,28 +9,22 @@ function append(parent,el)
 
 const ul= document.getElementById("authors");
 
-const url='https://randomuser.me/api/?results=10';
-
-fetch("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies&count=10", {
+fetch("https://acobot-brainshop-ai-v1.p.mashape.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=what%20do%20you%20like", {
   headers: {
-    Accept: "application/json",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "X-Mashape-Key": "XTAJ1AQfbzmshw3qVeLKUuRLLEUap19S13hjsnn3Dv62dSd9VA"
-  },
-  method: "POST"
+    	Accept: "application/json",
+   	"X-Mashape-Key": "XTAJ1AQfbzmshw3qVeLKUuRLLEUap19S13hjsnn3Dv62dSd9VA"
+  }
 })
 .then((resp)=>resp.json())
 .then(function(data){
 	let authors = data;
-	for (var i = 0; i < data.length; i++) {
+	
 	let li= createNode('li'), 
 	span = createNode('h2');
-	span.innerHTML = authors[i].quote;
+	span.innerHTML = authors.cnt;
 	append(li,span);
 	append(ul,li);
-	
-	}
-	
+		
 	})
 .catch(function(error){
 console.log(JSON.stringify(error));
