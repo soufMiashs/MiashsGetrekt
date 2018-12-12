@@ -11,9 +11,10 @@ const ul= document.getElementById("authors");
 
 const url='https://randomuser.me/api/?results=10';
 
-fetch("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies&count=10", {
+fetch("https://dnaber-languagetool.p.mashape.com/v2/check", {
+  body: "language=en-US&text=becose",
   headers: {
-    Accept: "application/json",
+    Accept: "text/plain",
     "Content-Type": "application/x-www-form-urlencoded",
     "X-Mashape-Key": "XTAJ1AQfbzmshw3qVeLKUuRLLEUap19S13hjsnn3Dv62dSd9VA"
   },
@@ -22,14 +23,12 @@ fetch("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies&count=10
 .then((resp)=>resp.json())
 .then(function(data){
 	let authors = data;
-	for (var i = 0; i < data.length; i++) {
 	let li= createNode('li'), 
 	span = createNode('h2');
-	span.innerHTML = authors[i].quote;
+	span.innerHTML = authors.matches[0].message;
 	append(li,span);
 	append(ul,li);
 	
-	}
 	
 	})
 .catch(function(error){
