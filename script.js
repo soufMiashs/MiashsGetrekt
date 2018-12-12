@@ -9,8 +9,28 @@ function append(parent,el)
 
 const ul= document.getElementById("sentiments");
 
+
+//runs the keypress() function when a key is pressed
+document.onkeypress = keyPress;
+//if the key pressed is 'enter' runs the function newEntry()
+function keyPress(e) {
+  var x = e || window.event;
+  var key = (x.keyCode || x.which);
+  if (key == 13) {
+    //runs this function when enter is pressed
+    insert();
+  }
+}
+var textC=""
+function insert() {
+ textC = document.getElementById("myText").value;
+
+
+
+
+
 fetch("https://text-sentiment.p.mashape.com/analyze", {
-  body: "text=I am so sad",
+  body: "text="+textC,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/x-www-form-urlencoded",
@@ -45,3 +65,4 @@ fetch("https://text-sentiment.p.mashape.com/analyze", {
 .catch(function(error){
 console.log(JSON.stringify(error));
 });
+}
