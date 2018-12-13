@@ -7,3 +7,5 @@ Le fichier JS (GramCheck.js) vérfie le style et la grammaire. Relecture dans pl
 Le fichier JS (script01) est une intelligence artificielle conversationnelle, ou bot bot, qui fonctionne sans rien, elle permet de faire son propre Siri ou Cortana. (Personnalisable, Programmable, Libre)
 
 Le fichier JS (scriptSentAnalysis.js) interroge une API d'analyse sentimentale (émotionnelle) des textes.
+
+Création branche master
