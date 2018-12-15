@@ -5,8 +5,6 @@ Le fichier JS (script.js) est un fichier exemple de la requête fetch qui teste 
 
 Le lien source : https://market.mashape.com/fyhao/text-sentiment-analysis-method#
 
-
-# MiashsGetrekt
 ## BrainShop.AI
 
 Le fichier JS (script) est une intelligence artificielle conversationnelle, ou ChatBot qui permet de faire des opérations tels que : traduction, calculs, recherche sur internet... 
