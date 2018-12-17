@@ -9,3 +9,5 @@ Le fichier JS (script01) est une intelligence artificielle conversationnelle, ou
 Le fichier JS (scriptSentAnalysis.js) interroge une API d'analyse sentimentale (émotionnelle) des textes.
 
 Création branche master
+
+Cette branche permettra de créer l'interface html et css
