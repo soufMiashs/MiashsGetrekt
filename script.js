@@ -42,7 +42,9 @@ function insert() {
 
     let li= createNode('li'),
     span = createNode('h2');
-        
+
+    textC =reponse.cnt;
+    span.innerHTML = textC;
 
         
     //span.innerHTML = reponse.cnt;
