@@ -42,7 +42,11 @@ function insert() {
 
     let li= createNode('li'),
     span = createNode('h2');
-    span.innerHTML = reponse.cnt;
+        
+
+        
+    //span.innerHTML = reponse.cnt;
+            span.innerHTML = textC;
         //runs sentiment analysis
             textC =reponse.cnt;
             fetch("https://text-sentiment.p.mashape.com/analyze", {
