@@ -37,3 +37,11 @@ table {
  padding-left: 15px;
  border-radius: 15px;
 }
+#boitedisc1 {
+   color: white;
+ font: 17px arial, sans-serif;
+ height: 22px;
+ width: 100%;
+ background-color: black;
+ opacity: 0.8;
+}
