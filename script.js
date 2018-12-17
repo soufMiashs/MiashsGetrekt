@@ -45,15 +45,13 @@ function insert() {
 
     textC =reponse.cnt;
     span.innerHTML = textC;
-    // Speech API user from function peechSynthesis
+    // Speech API used from function peechSynthesis
       if ('speechSynthesis' in window)
                         {
                         var utterance = new SpeechSynthesisUtterance(textC);
                         speechSynthesis.speak(utterance);
                         }
         
-    //span.innerHTML = reponse.cnt;
-            //span.innerHTML = textC;
         //runs sentiment analysis
             fetch("https://text-sentiment.p.mashape.com/analyze", {
             body: "text="+textC,
