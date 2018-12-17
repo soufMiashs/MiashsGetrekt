@@ -45,3 +45,7 @@ table {
  background-color: black;
  opacity: 0.8;
 }
+
+.chatlog {
+  font: 15px arial, sans-serif;
+}
