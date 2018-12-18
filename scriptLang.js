@@ -31,12 +31,21 @@ method: "POST"
 }).then((resp)=>resp.json())
 .then(function(data){
    let result = data;
-   let li= createNode('li'),
-   span = createNode('h2');
-   span.innerHTML = result.matches[0].message;
-   append(li,span);
-   append(ul,li);
-
+		for(var i = 0; i < result.matches.length; i++)
+		{ 	botMessageG = "";
+			botMessage = result.matches[i].message;
+			
+			for(var j = 0; j < result.matches[i].replacements.length; j++)
+			{
+				botMessageG = botMessageG +" "+result.matches[i].replacements[j].value;
+			}
+			messagesG.push("<b> Message :</b> " +botMessage+ "<b>  Replacements :</b> " + botMessageG);
+		}
+		for (var i = 1; i < 100; i++) 
+				{
+				  if (messagesG[messagesG.length - i])
+					document.getElementById("chatlog" + i).innerHTML = messagesG[messagesG.length - i];
+				}
 
    })
 .catch(function(error){
