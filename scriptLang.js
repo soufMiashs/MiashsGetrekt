@@ -31,8 +31,10 @@ method: "POST"
 }).then((resp)=>resp.json())
 .then(function(data){
    let result = data;
+   messagesG = [];
 		for(var i = 0; i < result.matches.length; i++)
 		{ 	botMessageG = "";
+			botMessage = "";
 			botMessage = result.matches[i].message;
 			
 			for(var j = 0; j < result.matches[i].replacements.length; j++)
