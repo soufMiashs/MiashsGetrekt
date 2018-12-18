@@ -1,6 +1,6 @@
 function createNode(element)
 {
-    return document.createElement(element);
+     return document.createElement(element);
 }
 function append(parent,el)
 {
@@ -42,17 +42,9 @@ function insert() {
 
     let li= createNode('li'),
     span = createNode('h2');
-
-    textC =reponse.cnt;
-    span.innerHTML = textC;
-    // Speech API used from function peechSynthesis
-      if ('speechSynthesis' in window)
-                        {
-                        var utterance = new SpeechSynthesisUtterance(textC);
-                        speechSynthesis.speak(utterance);
-                        }
-        
-        //runs sentiment analysis
+    span.innerHTML = reponse.cnt;
+        //runs sentiment analysis api
+            textC =reponse.cnt;
             fetch("https://text-sentiment.p.mashape.com/analyze", {
             body: "text="+textC,
             headers: {
