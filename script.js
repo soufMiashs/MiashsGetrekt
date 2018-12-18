@@ -43,6 +43,12 @@ function insert() {
     let li= createNode('li'),
     span = createNode('h2');
     span.innerHTML = reponse.cnt;
+          //add speech api
+            if ('speechSynthesis' in window)
+                {
+                var utterance = new SpeechSynthesisUtterance(reponse.cnt);
+                speechSynthesis.speak(utterance);
+                }
         //runs sentiment analysis api
             textC =reponse.cnt;
             fetch("https://text-sentiment.p.mashape.com/analyze", {
