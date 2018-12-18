@@ -124,7 +124,7 @@ method: "POST"
 		for (var i = 1; i < 100; i++) 
 				{
 				  if (messagesG[messagesG.length - i])
-					document.getElementById("chatlog" + i).innerHTML = messagesG[messagesG.length - i];
+					document.getElementById("chatlo" + i).innerHTML = messagesG[messagesG.length - i];
 				}
 
    })
