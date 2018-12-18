@@ -42,15 +42,15 @@ function insert() {
 
     let li= createNode('li'),
     span = createNode('h2');
-    span.innerHTML = reponse.cnt;
+    textC =reponse.cnt;
+    span.innerHTML = textC;
           //add speech api
             if ('speechSynthesis' in window)
                 {
-                var utterance = new SpeechSynthesisUtterance(reponse.cnt);
+                var utterance = new SpeechSynthesisUtterance(textC);
                 speechSynthesis.speak(utterance);
                 }
         //runs sentiment analysis api
-            textC =reponse.cnt;
             fetch("https://text-sentiment.p.mashape.com/analyze", {
             body: "text="+textC,
             headers: {
