@@ -26,7 +26,8 @@ function keyPress(e) {
 var textC=""
 function insert() {
     
-
+    var messages = [],
+	botName = 'Chatbot';//name of the chatbot
     lastUserMessage = document.getElementById("myText").value;
     
     lastUserMessage = lastUserMessage.replace(/ +/g, "%20");
@@ -39,11 +40,7 @@ function insert() {
     .then((resp)=>resp.json())
     .then(function(data){
     let reponse = data;
-
-    let li= createNode('li'),
-    span = createNode('h2');
     textC =reponse.cnt;
-    span.innerHTML = textC;
           //add speech api
             if ('speechSynthesis' in window)
                 {
@@ -63,34 +60,19 @@ function insert() {
             .then((resp)=>resp.json())
             .then(function(data){
             let sentiments = data;
-            let li1= createNode('li'),
-            li2= createNode('li'),
-            li3= createNode('li'),
-            span1 = createNode('h2');
-            span2 = createNode('h2');
-            span3 = createNode('h2');
-            var pos= "positive emotion ";
-            var neg= "negative emotion ";
-            var mid= "i don't know ";
-            span1.innerHTML = pos.concat(sentiments.pos_percent);
-            span2.innerHTML = neg.concat(sentiments.neg_percent);
-            span3.innerHTML = mid.concat(sentiments.mid_percent);
-            append(li1,span1);
-            append(li2,span2);
-            append(li3,span3);
-            append(ul2,li1);
-            append(ul2,li2);
-            append(ul2,li3);
-
+            	messages.push("<b>" + botName + ":</b> " + textC +emo);
+		for (var i = 1; i < 100; i++) 
+		{
+		  if (messages[messages.length - i])
+			document.getElementById("chatlog" + i).innerHTML = messages[messages.length - i];
+		}
+			
 
             })
             .catch(function(error){
             console.log(JSON.stringify(error));
             });
-    
-    
-    append(li,span);
-    append(ul3,li);
+
 
     })
     .catch(function(error){
