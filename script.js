@@ -8,8 +8,6 @@ var messages = [], //array that hold the record of each string in ChatBot
 //Bot 
 function chatbotResponse() {
     var textC="";
-    lastUserMessage = document.getElementById("boitedisc").value;
-    
     lastUserMessage = lastUserMessage.replace(/ +/g, "%20");
     fetch("https://acobot-brainshop-ai-v1.p.mashape.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg="+lastUserMessage, {
     headers: {
