@@ -20,7 +20,11 @@ function chatbotResponse() {
     let reponse = data;
     textC =reponse.cnt;
 
-        //runs sentiment analysis api
+    textC = textC.replace("Valiant,","");
+    textC = textC.replace("  ","");
+    textC = textC.replace(", Valiant!","");
+    textC = textC.replace("Valiant","");
+            //runs sentiment analysis api
             fetch("https://text-sentiment.p.mashape.com/analyze", {
             body: "text="+textC,
             headers: {
