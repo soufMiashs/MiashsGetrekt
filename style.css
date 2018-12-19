@@ -51,6 +51,7 @@ table {
 }
 
 #boite {
+  transform: translate(10%, 10%);
   background-color: black;
   opacity: 0.5;
   margin: 50px 0px 0px 120px;
