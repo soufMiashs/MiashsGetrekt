@@ -3,11 +3,11 @@ var messages = [], //array that hold the record of each string in ChatBot
     lastUserMessage = "", //keeps track of the most recent input string from the user
     botMessage = "", //var keeps track of what the chatbot is going to say
     botName = 'Chatbot', //name of the chatbot
-    textC="";
+   
 
 //Bot 
 function chatbotResponse() {
-
+    var textC="";
     lastUserMessage = document.getElementById("boitedisc").value;
     
     lastUserMessage = lastUserMessage.replace(/ +/g, "%20");
@@ -44,7 +44,7 @@ function chatbotResponse() {
 
 		if (sentiments.neg_percent != "0%")
 				emo = emo+ " &#x1F61F;";
-            	messages.push("<b>" + botName + ":</b> " + textC +emo);
+            	messages.push("<b>" + botName + ":</b> " + textC+" "+emo);
 		    
 		    
 		    
