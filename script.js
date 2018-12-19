@@ -78,8 +78,7 @@ function chatbotResponse() {
 //*****************************************************************************************
 
 function correctMsg() {
-lastUserMessage = document.getElementById("boitedisc1").value;
-	console.log(lastUserMessage);
+
 fetch("https://dnaber-languagetool.p.mashape.com/v2/check", {
 body: "language=en-US&text="+ lastUserMessage,
 headers: {
