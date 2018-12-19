@@ -90,6 +90,7 @@ method: "POST"
 }).then((resp)=>resp.json())
 .then(function(data){
    let result = data;
+	console.log(result.matches[0].message);
    messagesG = [];
    if (result.matches.length==0)
 	{
@@ -101,10 +102,10 @@ method: "POST"
 			}
 	}
 	else
-	{
+	{ console.log("else");
 		for(var i = 0; i < result.matches.length; i++)
 		{ 	botMessageG = "";
-			botMessageG = result.matches[i].message;
+			botMessage = result.matches[i].message;
 			
 			for(var j = 0; j < result.matches[i].replacements.length; j++)
 			{
@@ -113,7 +114,7 @@ method: "POST"
 			messagesG.push("<b> Message :</b> " +botMessage+ "<b>  Replacements :</b> " + botMessageG);
 		}
 		for (var i = 1; i < 100; i++) 
-		{
+		{console.log(messagesG);
 		  if (messagesG[messagesG.length - i])
 			document.getElementById("chatlo" + i).innerHTML = messagesG[messagesG.length - i];
 		}
