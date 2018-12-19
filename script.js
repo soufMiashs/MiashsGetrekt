@@ -1,5 +1,5 @@
-var messages = [],
-    messagesG = [], //array that hold the record of each string in chat
+var messages = [], //array that hold the record of each string in ChatBot
+    messagesG = [], //array that hold the record of each string in GramCheck
     lastUserMessage = "", //keeps track of the most recent input string from the user
     botMessage = "", //var keeps track of what the chatbot is going to say
     botName = 'Chatbot', //name of the chatbot
@@ -36,13 +36,13 @@ function chatbotResponse() {
             .then(function(data){
             let sentiments = data;
 	    var emo ="";
-		if (authors.pos_percent != "0%" )
+		if (sentiments.pos_percent != "0%" )
 				emo = emo+" &#x1F600;";
 
-		if (authors.mid_percent != "0%")
+		if (sentiments.mid_percent != "0%")
 				emo = emo+ " &#x1F914;";
 
-		if (authors.neg_percent != "0%")
+		if (sentiments.neg_percent != "0%")
 				emo = emo+ " &#x1F61F;";
             	messages.push("<b>" + botName + ":</b> " + textC +emo);
 		    
