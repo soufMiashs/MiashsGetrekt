@@ -63,6 +63,8 @@ table {
 }
 
 #boxborder {
+	
+  transform: translate(10%, 10%);
   color: white;
   background-color: #131514;
   opacity: 0.8;
