@@ -8,7 +8,7 @@ var messages = [],
 //Bot 
 function chatbotResponse() {
 
-    lastUserMessage = document.getElementById("myText").value;
+    lastUserMessage = document.getElementById("boitedisc").value;
     
     lastUserMessage = lastUserMessage.replace(/ +/g, "%20");
     fetch("https://acobot-brainshop-ai-v1.p.mashape.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg="+lastUserMessage, {
@@ -78,7 +78,7 @@ function chatbotResponse() {
 //*****************************************************************************************
 
 function correctMsg() {
-lastUserMessage = document.getElementById("myText").value;
+lastUserMessage = document.getElementById("boitedisc").value;
 fetch("https://dnaber-languagetool.p.mashape.com/v2/check", {
 body: "language=en-US&text="+ lastUserMessage,
 headers: {
