@@ -90,7 +90,6 @@ method: "POST"
 }).then((resp)=>resp.json())
 .then(function(data){
    let result = data;
-   messagesG = [];
    if (result.matches.length==0)
 	{
 		messagesG.push("<b> message :</b> " +lastUserMessage+" is correct");
