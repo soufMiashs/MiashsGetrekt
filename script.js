@@ -89,17 +89,21 @@ headers: {
 method: "POST"
 }).then((resp)=>resp.json())
 .then(function(data){
-	
-	
-	
-	
-	
-	
    let result = data;
    messagesG = [];
+   if (result.matches.length==0)
+	{
+		messagesG.push("<b> message :</b> " +lastUserMessage+" is correct");
+		for (var i = 1; i < 100; i++) 
+			{
+			  if (messagesG[messagesG.length - i])
+				document.getElementById("chatlo" + i).innerHTML = messagesG[messagesG.length - i];
+			}
+	}
+	else
+	{
 		for(var i = 0; i < result.matches.length; i++)
 		{ 	botMessageG = "";
-			botMessage = "";
 			botMessage = result.matches[i].message;
 			
 			for(var j = 0; j < result.matches[i].replacements.length; j++)
@@ -109,13 +113,13 @@ method: "POST"
 			messagesG.push("<b> Message :</b> " +botMessage+ "<b>  Replacements :</b> " + botMessageG);
 		}
 		for (var i = 1; i < 100; i++) 
-				{
-				  if (messagesG[messagesG.length - i])
-					document.getElementById("chatlo" + i).innerHTML = messagesG[messagesG.length - i];
-				}
+		{
+		  if (messagesG[messagesG.length - i])
+			document.getElementById("chatlo" + i).innerHTML = messagesG[messagesG.length - i];
+		}
 
 	
-	
+	}
 	
 	
 	
