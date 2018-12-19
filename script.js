@@ -23,6 +23,7 @@ function chatbotResponse() {
     textC = textC.replace("Valiant,","");
     textC = textC.replace("  ","");
     textC = textC.replace(", Valiant!","");
+    textC = textC.replace(", Valiant.","");
     textC = textC.replace("Valiant","");
             //runs sentiment analysis api
             fetch("https://text-sentiment.p.mashape.com/analyze", {
